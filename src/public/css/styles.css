@@ -1,0 +1,259 @@
+html, body{
+	background-color: #171717;
+	font-family: 'Poppins', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	min-height: 100%;
+	height: 100%;
+	font-size: small;
+	margin: 0;
+	padding: 0;
+}
+
+.ob { background: #fff }
+.no-padding { padding: 0 !important }
+.no-margin { margin: 0 !important }
+#main-menu li a.active { color: #0e8c2b }
+
+#menu-dots-container {
+	float: right;
+	width: 40px;
+	height: 33px;
+	padding: 0;
+}
+
+#menu-dots {
+	width: 9px;
+	height: 33px;
+	float: right;
+}
+
+#current-route li a { color: #000; }
+
+#current-route li.active {
+	color: #4ba82c;
+}
+
+/* footer xs size */
+@media(max-width: 370px){
+	footer .main-menu {
+		float: none !important;
+		text-align: center;
+		max-width: 100% !important;
+	}
+	footer .social-menu {
+		width: 100% !important;
+		margin-top: 1em !important;
+		text-align: center;
+	}
+}
+
+/* Phone */
+@media (max-width: 600px) {
+	#main-menu-container {
+		padding: 0.8em 1em 1.1em 0.8em;
+	}
+
+	#mobile-nav {
+		position: fixed;
+		height: 110vh;
+		width: 100%;
+		z-index: 1000;
+		background: #000;
+		top: 0;
+		left: 0;
+	}
+
+	#main-menu {
+		margin: 0.8em 0 0 0;
+		padding: 0;
+	}
+
+	#main-menu li {
+		text-align: right;
+		list-style: none;
+	}
+
+	#main-menu li a {
+		color: #fff;
+		font-size: 1.4em;
+		border-bottom: 1px solid #fff;
+		display: block;
+		padding: 0.5em;
+		margin: 0 0.8em;
+	}
+
+	.no-border-bottom {
+		border-bottom: 0 !important;
+	}
+
+	#close-modal-main-menu {
+		font-size: 2.8em;
+		position: absolute;
+		z-index: 11;
+		top: 0.3em;
+		left:0.5em;
+		font-weight: lighter;
+		color: #fff;
+		cursor: pointer;
+		width: 35px;
+		height: 50px;
+		background: url('../svg/close.svg') no-repeat;
+		background-size: 25px 25px;
+	}
+
+	#main-menu-logo {
+		width: 160px;
+		margin: 5px 0 0 0;
+	}
+
+	#nav-route { display: none; }
+
+	footer .main-menu {
+		max-width: 240px;
+		width: 100%;
+		margin: 0 !important;
+		padding: 0.8em 0 0 0.8em !important;
+		font-size: 0.9em;
+	}
+
+	footer .main-menu li {
+		font-size: 0.9em;
+	}
+}
+
+/* tablet and desktop transition */
+@media(min-width: 601px) and (max-width: 800px) {
+	#main-menu-logo {
+		width: 140px !important;
+	}
+
+	#main-menu-container {
+		margin: 0 0.5em !important;
+	}
+
+	#main-menu li a {
+		font-size: 1.2em !important;
+		margin: 0 0.4em 0 0 !important;
+	}
+}
+
+/* Tablet and desktop */
+@media (min-width: 601px){
+	#menu-dots, #menu-dots-container {
+		display: none;
+	}
+
+	#close-modal-main-menu {
+		display: none;
+	}
+
+	#main-menu-container {
+		text-align: center;
+		overflow: hidden;
+		/*margin: 0 0.8em;*/
+
+		background-color: #171717;
+		padding-bottom: 10px;
+	}
+
+	html #mobile-nav.hidden {
+		display: block !important;
+	}
+
+	#main-menu {
+		list-style: none;
+		margin: 0.9em 0 0 0;
+		padding: 0;
+		float: right;
+	}
+
+	#main-menu li {
+		display: inline;
+	}
+
+	#main-menu li a {
+		color: #fff;
+		font-size: 1.4em;
+		margin: 0 0.8em 0 0;
+		line-height: 2em;
+	}
+
+	#main-menu-logo {
+		float: left;
+		width: 180px;
+		margin: 1.3em 0 0 0.2em;
+	}
+
+	#nav-route {
+		float: right;
+		margin: 0 0 1em 0;
+	}
+
+	#current-route {
+		list-style: none;
+		margin: 1em 4em 0 0;
+	}
+
+	#current-route li {
+		display: inline-block;
+		text-transform: capitalize;
+	}
+}
+
+/* Big screens style */
+@media(min-width: 1000px){
+
+	#main-menu li a {
+		font-size: 1.4em !important;
+		margin: 0 1.9em 0 0 !important;
+		line-height: 1.9em !important;
+	}
+
+	#main-menu-logo {
+		margin-left: 0.5em !important;
+	}
+
+	footer .main-menu li {
+		margin: 0 2em 0 1.5em !important;
+	}
+}
+
+footer {
+	overflow: hidden;
+	clear: both;
+	border-top: 1px solid #3f3f3f;
+	background-color: #fff;
+}
+
+footer .main-menu {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 1.5em 1em 0 1em;
+	color: #7a7a7b;
+}
+
+footer .main-menu li {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
+footer .main-menu a { color: #7a7a7b; }
+footer .social-menu a { color: #1799a7; }
+
+footer .social-menu {
+	background: #4ba82c;
+	margin: 0;
+	padding: 0.5em 0 0.5em 1em;
+	list-style: none;
+	float: right;
+}
+
+footer .social-menu li {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+
+footer .social-menu li img {
+	width: 40px;
+}

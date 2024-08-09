@@ -1,0 +1,240 @@
+/*  Override default design */
+#main-menu-container {
+    position: absolute !important;
+    z-index: 10;
+    width: 100%;
+    margin:0;
+    padding: 0.5em 1em;
+}
+
+html #main-menu-logo { display: none !important; }
+html #main-menu { width: 100% !important; }
+html #nav-route { display: none; }
+html #main-menu li a { margin: 0 1em !important; }
+
+/* Home style */
+#home-intro-background {
+    background: url('../img/bg-home.jpg') center no-repeat;
+    background-size: cover;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    /*background-blend-mode: hard-light;*/
+    width: 100%;
+    height: 100%;
+    /*opacity: 0.5;*/
+    position: absolute;
+    z-index: 0;
+}
+
+
+@supports (-webkit-touch-callout: none) {
+    #home-intro-background {
+    background: url('../img/bg-home.jpg') center no-repeat;
+    background-size: cover;
+    
+    background-attachment: scroll;
+
+  
+    /*background-blend-mode: hard-light;*/
+    width: 100%;
+    height: 100%;
+    /*opacity: 0.5;*/
+    position: absolute;
+    z-index: 0;
+}
+    
+}
+
+#home-intro-container {
+    width: 100%;
+    height: 100%;
+    display: table;
+    z-index: 5;
+    opacity: 1;
+    position: absolute;
+}
+
+#home-intro-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#intro-logo {
+    width: 90%;
+    max-width: 500px;
+}
+
+.slogan {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 1.2em 0 0 0;
+}
+
+#down-icon {
+    width: 40px;
+    margin-top: 0.9em;
+}
+
+#content-puller{
+    width: 100%;
+    height: 100%;
+}
+
+#squares-container h3 {
+    margin: 0;
+    padding: 0;
+    color: #4ba82c;
+}
+
+#squares-container p {
+    color: #4ba82c;
+    font-size: 1em;
+}
+
+#who-is-content h3, #who-is-content p{color: #fff!important;}
+
+.container-background {
+    width: 100%;
+    height: 320px;
+    position: absolute;
+    /* opacity: 0.2; */
+    z-index: 1;
+    background: #ffa75a;
+    margin: 0;
+    padding: 0;
+    filter: brightness(0.15);
+}
+
+#projects-background {
+    background: url('../img/foto1.jpg')center no-repeat;
+    background-size: cover;
+}
+
+#who-is-background {
+    /*background: url('../svg/square-logo.svg')center no-repeat;*/
+    background-size: cover;
+    background: #4ba82c;
+
+    width: 100%;
+    height: 320px;
+    position: absolute;
+    /* opacity: 0.2; */
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+#presence-background {
+    background: url('../img/foto3.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.square-over {
+    background: #4ba82c;
+    width: 100%;
+    height: 320px;
+    position: absolute;
+    z-index: 6;
+    opacity: 0.95;
+}
+
+.square-over img {
+    margin: 1.5em 0 1em 1.5em;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+}
+
+.square-over p {
+    color: #fff !important;
+    padding: 1em 1.5em;
+    font-size: 1.5em;
+}
+
+.square-over a {
+    color: #000;
+    display: table;
+    padding: 0 1em 0 0;
+    font-size: 1.2em;
+    width: 100%;
+    text-decoration: none;
+    position: absolute;
+    bottom: 1.5em;
+}
+
+.square-over span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 100%;
+    color:#fff;
+}
+
+.square-over a img {
+    height: 2em;
+    margin: 0;
+
+}
+
+#projects-container, #who-is-container, #presence-container  {
+    height: 320px;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    display: table;
+}
+
+#projects-content, #who-is-content, #presence-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.square-puller {
+    width: 100%;
+    height: 320px;
+    margin: 0;
+    padding: 0;
+}
+
+#interested-container {
+    background-color: #fff;
+    text-align: center;
+    padding: 2em 0 0 0;
+}
+
+#interested-container h2{
+    color: #4ba82c;
+}
+
+
+#interested-container p {
+    color: #a3a3a3;
+    font-size: 1.5em;
+}
+
+#write-us-img {
+    max-width: 350px;
+    padding: 0 0.5em;
+    width: 100%;
+    min-width: 0;
+}
+
+#interested-shadow {
+    background: #171717;
+    height: 90px;
+    margin: -36px 0 0 0;
+}
+
+#main-menu-container {
+        text-align: center;
+        /*overflow: hidden;*/
+        /*margin: 0 0.8em;*/
+
+        background-color: #ff000000!important;
+        padding-bottom: 10px;
+    }

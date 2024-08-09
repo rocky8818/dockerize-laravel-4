@@ -1,0 +1,18 @@
+[01-Nov-2023 08:07:56 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "Patchwork\Utf8\MB_OVERLOAD_STRING" in /home3/quatroco/public_html/vendor/patchwork/utf8/src/Patchwork/Utf8/Bootup.php:45
+Stack trace:
+#0 /home3/quatroco/public_html/bootstrap/autoload.php(46): Patchwork\Utf8\Bootup::initMbstring()
+#1 /home3/quatroco/public_html/public/index.php(21): require('/home3/quatroco...')
+#2 {main}
+  thrown in /home3/quatroco/public_html/vendor/patchwork/utf8/src/Patchwork/Utf8/Bootup.php on line 45
+[01-Nov-2023 08:07:57 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "Patchwork\Utf8\MB_OVERLOAD_STRING" in /home3/quatroco/public_html/vendor/patchwork/utf8/src/Patchwork/Utf8/Bootup.php:45
+Stack trace:
+#0 /home3/quatroco/public_html/bootstrap/autoload.php(46): Patchwork\Utf8\Bootup::initMbstring()
+#1 /home3/quatroco/public_html/public/index.php(21): require('/home3/quatroco...')
+#2 {main}
+  thrown in /home3/quatroco/public_html/vendor/patchwork/utf8/src/Patchwork/Utf8/Bootup.php on line 45
+[01-Nov-2023 08:07:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "Patchwork\Utf8\MB_OVERLOAD_STRING" in /home3/quatroco/public_html/vendor/patchwork/utf8/src/Patchwork/Utf8/Bootup.php:45
+Stack trace:
+#0 /home3/quatroco/public_html/bootstrap/autoload.php(46): Patchwork\Utf8\Bootup::initMbstring()
+#1 /home3/quatroco/public_html/public/index.php(21): require('/home3/quatroco...')
+#2 {main}
+  thrown in /home3/quatroco/public_html/vendor/patchwork/utf8/src/Patchwork/Utf8/Bootup.php on line 45

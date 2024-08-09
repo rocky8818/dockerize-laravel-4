@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="334.742px" height="72.681px" viewBox="0 0 334.742 72.681" enable-background="new 0 0 334.742 72.681"
+	 xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-77.8936" y1="58.9312" x2="606.0731" y2="-4.0658">
+		<stop  offset="0" style="stop-color:#716330"/>
+		<stop  offset="0.0046" style="stop-color:#796938"/>
+		<stop  offset="0.0227" style="stop-color:#968053"/>
+		<stop  offset="0.0426" style="stop-color:#B2996B"/>
+		<stop  offset="0.0642" style="stop-color:#C9B181"/>
+		<stop  offset="0.0883" style="stop-color:#DBC394"/>
+		<stop  offset="0.1163" style="stop-color:#E8D1A2"/>
+		<stop  offset="0.1516" style="stop-color:#EFD8AB"/>
+		<stop  offset="0.2183" style="stop-color:#F1DBAD"/>
+		<stop  offset="0.4009" style="stop-color:#C3AA6F"/>
+		<stop  offset="0.4891" style="stop-color:#B09759"/>
+		<stop  offset="0.5541" style="stop-color:#BEA469"/>
+		<stop  offset="0.6888" style="stop-color:#E2CA97"/>
+		<stop  offset="0.7416" style="stop-color:#F1DBAD"/>
+		<stop  offset="0.7593" style="stop-color:#E5CE9F"/>
+		<stop  offset="0.8665" style="stop-color:#9E875C"/>
+		<stop  offset="0.9437" style="stop-color:#776639"/>
+		<stop  offset="0.9825" style="stop-color:#6A5C2D"/>
+		<stop  offset="1" style="stop-color:#6A5C2D"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M331.565,72.681H3.177C1.422,72.681,0,71.259,0,69.505V3.177C0,1.423,1.422,0,3.177,0h328.389
+		c1.755,0,3.177,1.423,3.177,3.177v66.329C334.742,71.259,333.32,72.681,331.565,72.681z"/>
+	<text transform="matrix(1 0 0 1 69.4629 48.4351)" fill="#030104" font-family="'Poppins-Light'" font-size="34.8753">ESCRÍBENOS</text>
+	<path fill="#030104" d="M310.222,23.24h-28c-1.654,0-3,1.346-3,3v19.999c0,1.656,1.346,3,3,3h1v8.203l9.375-8.203h17.625
+		c1.654,0,3-1.344,3-3V26.24C313.222,24.585,311.876,23.24,310.222,23.24z M311.222,46.239c0,0.551-0.449,1-1,1h-18.375
+		l-6.625,5.797v-5.797h-3c-0.551,0-1-0.449-1-1V26.24c0-0.55,0.449-1,1-1h28c0.551,0,1,0.45,1,1V46.239z M285.222,29.24h22v2h-22
+		V29.24z M285.222,33.24h22v2h-22V33.24z M285.222,37.24h12v2h-12V37.24z"/>
+</g>
+</svg>
