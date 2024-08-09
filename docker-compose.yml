@@ -1,59 +1,61 @@
-version: '3.7'
+version: "3.7"
+
+networks:
+  app-network:
+    driver: bridge
+
 services:
   app:
-    image: gateway-laravel
-    build:
+    build: 
       context: ./
-      args:
-        user: instock
-        uid: 1000
-        build: dev
-      dockerfile: ./dockerfile
-    container_name: gateway-laravel
+      dockerfile: Dockerfile
+    image: rental-app
+    container_name: rental-app
     restart: unless-stopped
-    ports:
-      - 8082:80
-    working_dir: /var/www/
-    volumes:
+    tty: true
+    working_dir: /var/www
+    volumes: 
       - ./src:/var/www
-    depends_on:
-      - db
-    links:
-      - db
-    networks:
-      - localNetwork
-
+    networks: 
+      - app-network
+        
   db:
     image: mysql:5.7
-    container_name: gateway-db
+    container_name: db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USERNAME}
-      SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker-compose/mysql/init:/docker-entrypoint-initdb.d
-      - ./docker-compose/mysql/data:/var/lib/mysql:delegated
+      - ./docker-data/mysql/init:/docker-entrypoint-initdb.d
+      - ./docker-data/mysql/data:/var/lib/mysql:delegated
     networks:
-      - localNetwork
+      - app-network
+        
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports: 
+      - 8081:80
+    volumes: 
+      - ./src:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks: 
+      - app-network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: gateway-mysql
+    container_name: phpmyadmin
     restart: unless-stopped
     expose:
       - 80
     ports:
-      - 8081:80
-    environment:
-      PMA_HOST: db
-      PMA_USER: ${DB_USERNAME}
-      PMA_PASSWORD: ${DB_PASSWORD}
+      - 8082:80
     networks:
-      - localNetwork
-networks:
-  localNetwork:
-    driver: bridge
+      - app-network
+        

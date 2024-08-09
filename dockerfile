@@ -1,62 +1,50 @@
 FROM php:7.4-fpm
 
-# Arguments defined in docker-compose(dev or prod)
-ARG user
-ARG uid
-ARG build
+# Set working directory
+WORKDIR /var/www
 
-# install all the dependencies and enable PHP modules
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
-      procps \
-      nano \
-      git \
-      unzip \
-      libicu-dev \
-      zlib1g-dev \
-      libxml2 \
-      libxml2-dev \
-      libreadline-dev \
-      supervisor \
-      cron \
-      libzip-dev \
-      # needed for gd
-      libfreetype6-dev \
-      libjpeg62-turbo-dev \
-      libpng-dev \
-      libonig-dev \
-    && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-install \
-      pdo_mysql \
-      sockets \
-      intl \
-      opcache \
-      zip \
-    && rm -rf /tmp/* \
-    && rm -rf /var/list/apt/* \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt-get clean
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  libpng-dev \
+  libjpeg62-turbo-dev \
+  libfreetype6-dev \
+  locales \
+  zip \
+  jpegoptim optipng pngquant gifsicle \
+  vim \
+  unzip \
+  git \
+  curl
 
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install extensions
+# RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
+RUN docker-php-ext-install bcmath pdo_mysql
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install -j "$(nproc)" gd
 
-RUN apt-get update && apt-get install -y net-tools
-
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # put php config for Laravel
-COPY ./src/docker/$build/www.conf /usr/local/etc/php-fpm.d/www.conf
-COPY ./src/docker/$build/php.ini /usr/local/etc/php/php.ini
+COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Set working directory
 WORKDIR /var/www
 
+# Change current user to www
+USER www
 
-USER $user
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
