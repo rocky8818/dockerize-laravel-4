@@ -1,0 +1,48 @@
+#banner-container {
+    display: table;
+    width: 100%;
+    height: 64%;
+    background: url('../img/proyectos-banner.png') center no-repeat;
+    background-size: cover;
+}
+
+.project-container {
+    width: 100%;
+    height: 20em;
+    padding: 1em 1em 1em 2em;
+}
+
+.project-image {
+    float: right;
+    height: 17em;
+    margin: 0 1em 0 0;
+}
+
+.project-container h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0.5em 0 0 0;
+}
+
+.project-container p {
+    color: #fff;
+    margin: 0;
+    padding: 1em 0 0 0;
+    font-size: 1.1em;
+}
+
+.see-more {
+    position: absolute;
+    bottom: 25px;
+    color: #fff;
+}
+
+.see-more:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.see-more img {
+    margin: 0 0.5em 0 0;
+    font-size: 1.1em;
+}

@@ -1,0 +1,109 @@
+h1.project-title {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0.2em 0 1em 1em;
+}
+
+ul.floors {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+ul.floors li {
+    border-bottom: 1px solid #fff;
+    padding: 0.3em 0.2em 0.3em 0.5em;
+    color: #fff;
+    font-size: 3em;
+}
+
+ul.floors li.active, ul.floors li:hover {
+    background: #c6b187;
+}
+
+ul.floors li:last-child {
+    border-bottom: 0;
+}
+
+@media(max-width: 460px) {
+    h1.project-title {
+        font-size: 1.5em;
+    }
+
+    ul.floors li {
+        font-size: 1.6em;
+    }
+
+    ul.floors {
+        margin: 0 10% 0 0;
+    }
+}
+
+.floor-image {
+    width: 100%;
+    margin: 0 0 1em 0;
+}
+
+h4, h5 {
+    color: #fff;
+    font-size: 1.5em;
+    margin:0;
+    padding: 0;
+}
+
+h5 {
+    font-size: 1.5em;
+    clear: both;
+    margin-top: 1.4em;
+}
+
+ul.finishes {
+    color: #fff;
+    list-style: none;
+    margin: 0 0 2.5em 0;
+    padding: 0;
+}
+
+ul.finishes li {
+    border-top: 1px solid #fff;
+    padding: 1em 0;
+    font-size: 1.2em;
+}
+
+ul.first-char, ul.last-char {
+    list-style: none;
+    color: #fff;
+    padding: 0 0.8em;
+    font-size: 1.1em;
+    margin:0;
+}
+
+ul.first-char {
+    float: left;
+    margin-right: 1em;
+}
+
+ul.last-char {
+    display: block;
+    float: left;
+}
+
+.ob {
+    padding: 5% 10%;
+    height: 100%;
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.row{
+    overflow: hidden;
+}
+
+#images-row img {
+    width: 100%;
+
+}

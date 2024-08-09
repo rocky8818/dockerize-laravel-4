@@ -1,32 +1,59 @@
-version: "3.1"
-
+version: '3.7'
 services:
   app:
-    image: runnable/php:5.6.27-apache
-    depends_on:
-      - mariadb
-    links:
-      - mariadb
-    ports:
-      - 80:80
-    restart: always
-    env_file:
-      - .env  
-    volumes:
-      - ./src:/var/www/html:rw
-      - ./docker/000-laravel.conf:/etc/apache2/sites-enabled/000-laravel.conf
-      - ./docker/apache2.conf:/etc/apache2/apache2.conf
-  mariadb:
-    image: mariadb:10.2
+    image: gateway-laravel
+    build:
+      context: ./
+      args:
+        user: instock
+        uid: 1000
+        build: dev
+      dockerfile: ./dockerfile
+    container_name: gateway-laravel
     restart: unless-stopped
-    env_file:
-      - .env
-    volumes:
-      - myDataVolume:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - 8082:80
+    working_dir: /var/www/
+    volumes:
+      - ./src:/var/www
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - localNetwork
 
-volumes:
-  myDataVolume:
-    external: false
-    name: myDataVolume_test
+  db:
+    image: mysql:5.7
+    container_name: gateway-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql/init:/docker-entrypoint-initdb.d
+      - ./docker-compose/mysql/data:/var/lib/mysql:delegated
+    networks:
+      - localNetwork
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: gateway-mysql
+    restart: unless-stopped
+    expose:
+      - 80
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: ${DB_USERNAME}
+      PMA_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - localNetwork
+networks:
+  localNetwork:
+    driver: bridge
